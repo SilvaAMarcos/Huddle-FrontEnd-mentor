@@ -1,0 +1,126 @@
+:root {
+    --background: hsl(257, 40%, 49%);
+    --botao: hsl(300, 69%, 71%);
+
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+body::before {
+    content: "";
+    background-image: url(../images/bg-desktop.svg);
+    background-color: var(--background);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "cabecalho cabecalho"
+        "imagem conteudo"
+        "rodape rodape";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 20% auto 10%;
+}
+
+.cabecalho {
+    grid-area: cabecalho;
+    display: flex;
+    align-items: center;
+    padding: 40px 100px;
+}
+
+.cabecalho img {
+    width: 21.5rem;
+}
+
+.imagem {
+    grid-area: imagem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 0 0 100px;
+
+}
+
+.imagem img {
+    width: 100%;
+}
+
+
+
+.conteudo {
+    grid-area: conteudo;
+    display: flex;
+    flex-direction: column;
+    padding: 70px 100px 0 50px;
+}
+
+.conteudo .titulo {
+    font-size: 5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.conteudo .conteudo-texto {
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.conteudo a {
+    margin-top: 20px;
+    max-width: 220px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--background);
+    background-color: #fff;
+    transition: 0.3s;
+    box-shadow: 4px 6px 10px 1px rgba(0, 0, 0, 0.54);
+}
+
+.conteudo a:hover {
+    color: #fff;
+    background-color: var(--botao);
+}
+
+.rodape {
+    grid-area: rodape;
+    display: flex;
+    gap: 20px;
+    padding: 0 100px;
+    justify-content: flex-end;
+
+}
+
+.rodape a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 100px;
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+.rodape a:hover {
+    color: var(--botao);
+    border: 2px solid var(--botao);
+}
